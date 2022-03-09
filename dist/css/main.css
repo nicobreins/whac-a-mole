@@ -1,3 +1,47 @@
+.grid {
+  display: flex;
+  width: 306px;
+  height: 306px;
+  flex-wrap: wrap;
+}
+.grid .square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+.grid .square:hover {
+  cursor: url(../../dist/imgs/hammer.png), auto;
+}
+.grid .square:active {
+  cursor: url(../../dist/imgs/hammer-whac.png), auto;
+}
+.grid .square.mole::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-image: url(../../dist/imgs/mole.png);
+  background-size: contain;
+  animation: moveUp 0.3s ease;
+}
+.grid .square.mole-whac::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-image: url(../../dist/imgs/mole-whaced.png);
+  background-size: contain;
+}
 
+@keyframes moveUp {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
